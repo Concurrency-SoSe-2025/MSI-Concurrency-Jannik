@@ -17,12 +17,13 @@ public class MultiThreadedProofOfWork {
         System.out.println("Available Processor: " + NUM_THREADS);
 
         String block = "new block";
-        BigInteger target = new BigInteger("0000000fffffffffffffffffffffffffffffffffffffffffffffffffffffffff", 16);
+        BigInteger target = new BigInteger("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", 16);
 
         long startTime = System.currentTimeMillis();
         long foundNonce = proveWork(block, target);
         long endTime = System.currentTimeMillis();
 
+        System.out.println("Target: " + target);
         System.out.println("Winner nonce: " + foundNonce);
         System.out.println("Time taken: " + (endTime - startTime) + " ms");
     }
