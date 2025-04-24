@@ -99,6 +99,6 @@ public class ConditionedPhilosopher implements Runnable {
             } catch (InterruptedException e) { }
         }
 
-        System.out.println("All philosophers are finished thinking and eating.");
+        System.out.println("All philosophers are finished thinking and eatingg.");
     }
 }
