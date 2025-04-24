@@ -36,21 +36,14 @@ fn service(n: u64) -> [u64; MAX] {
     unsafe {
         if n == LAST_NUMBER {
             println!("cache hit");
-            // Copy LAST_FACTORS into result
-            for i in 0..MAX {
-                result[i] = LAST_FACTORS[i];
-            }
         } else {
             println!("cache miss");
             factorizer(n, &mut result);
             LAST_NUMBER = n;
-            // copy result in LAST_FACTORS
-            for i in 0..MAX {
-                LAST_FACTORS[i] = result[i];
-            }
+            LAST_FACTORS = result;
         }
+        LAST_FACTORS
     }
-    result
 }
 
 fn print_result(n: u64, factors: &[u64; MAX]) {
