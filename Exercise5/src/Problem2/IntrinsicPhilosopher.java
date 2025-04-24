@@ -1,18 +1,15 @@
 package Exercise5.src.Problem2;
-
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.ReentrantLock;
 
 public class IntrinsicPhilosopher implements Runnable {
 
-    private final int id;
+    private final char id;
     private volatile boolean eating;
     private final Object table;
     private IntrinsicPhilosopher left;
     private IntrinsicPhilosopher right;
 
-    public IntrinsicPhilosopher(int id, Object table) {
+    public IntrinsicPhilosopher(char id, Object table) {
         this.eating = false;
         this.id = id;
         this.table = table;
@@ -62,17 +59,17 @@ public class IntrinsicPhilosopher implements Runnable {
 
     public static void main(String[] args) {
         int numberPhilosophers = 5;
-        ReentrantLock table = new ReentrantLock();
-        ConditionedPhilosopher[] philosophers = new ConditionedPhilosopher[numberPhilosophers];
+        Object table = new Object();
+        IntrinsicPhilosopher[] philosophers = new IntrinsicPhilosopher[numberPhilosophers];
         Thread[] threads = new Thread[numberPhilosophers];
 
         for (int i = 0; i < numberPhilosophers; i++) {
-            philosophers[i] = new ConditionedPhilosopher((char)('A' + i), table);
+            philosophers[i] = new IntrinsicPhilosopher((char)('A' + i), table);
         }
 
         for (int i = 0; i < numberPhilosophers; i++) {
-            ConditionedPhilosopher left = philosophers[(i + numberPhilosophers - 1) % numberPhilosophers];
-            ConditionedPhilosopher right = philosophers[(i + 1) % numberPhilosophers];
+            IntrinsicPhilosopher left = philosophers[(i + numberPhilosophers - 1) % numberPhilosophers];
+            IntrinsicPhilosopher right = philosophers[(i + 1) % numberPhilosophers];
             philosophers[i].setLeft(left);
             philosophers[i].setRight(right);
         }
