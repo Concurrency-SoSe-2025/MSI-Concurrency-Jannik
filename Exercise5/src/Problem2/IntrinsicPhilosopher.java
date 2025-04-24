@@ -1,4 +1,4 @@
-package Exercise5.src.Problem2;
+package Problem2;
 import java.util.concurrent.TimeUnit;
 
 public class IntrinsicPhilosopher implements Runnable {
