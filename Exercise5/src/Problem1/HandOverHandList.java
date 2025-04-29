@@ -15,7 +15,7 @@ public class HandOverHandList {
                     Thread.sleep(1000);
                 }
             } catch (InterruptedException e) {
-                Thread.currentThread().interrupt(); // Re-set interrupt flag
+                System.out.println("Inserter Thread got interrupted and is ending now");
             }
         });
 
@@ -35,7 +35,7 @@ public class HandOverHandList {
                     Thread.sleep(1000);
                 }
             } catch (InterruptedException e) {
-                Thread.currentThread().interrupt(); // Re-set interrupt flag
+                System.out.println("Deleter Thread got interrupted and is ending now");
             }
         });
 

@@ -1,11 +1,9 @@
 package Problem3;
 
-import java.util.*;
-// import java.util.concurrent.Semaphore;
+import java.util.ArrayList;
+import java.util.List;
 
 public class App {
-
-    // private static final Semaphore semaphore = new Semaphore(1);
 
     public static void main(String[] args) throws Exception {
         SharedVariables sharedVariables = new SharedVariables();
@@ -33,21 +31,30 @@ public class App {
 
             Integer number = request;
 
-            synchronized (sharedVariable) {
-                if (number == sharedVariable.getLastNumber()) {
+            // Acquire read lock to check cached values
+            sharedVariable.readLock();
+            try {
+                if (number.equals(sharedVariable.getLastNumber())) {
                     response = sharedVariable.getLastFactors();
 
+                    // Calculate product from all factors (should be number)
                     int result = response.stream().reduce(1, (a, b) -> a * b);
-                    System.out.println("Given Number: " + number + " creates response " + response + " " + (result == number));
+                    System.out.println(
+                            "Given Number: " + number + " creates response " + response + " " + (result == number));
                     return;
                 }
+            } finally {
+                sharedVariable.readUnlock();
             }
 
             List<Integer> factors = calculateFactors(number);
 
-            synchronized (sharedVariable) {
-                sharedVariable.setLastNumber(number);
-                sharedVariable.setLastFactors(factors);
+            // Acquire write lock to update shared values
+            sharedVariable.writeLock();
+            try {
+                sharedVariable.setSharedValues(number, factors);
+            } finally {
+                sharedVariable.writeUnlock();
             }
             response = factors;
         }
@@ -67,15 +74,6 @@ public class App {
             }
 
             return factors;
-        }
-
-        private void sleep() {
-            try {
-                Thread.sleep(1000);
-                // System.out.println(sharedAccount.getBalance());
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
         }
     }
 }
