@@ -16,7 +16,6 @@ public class App {
 
     static class MyThread extends Thread {
         private SharedVariables sharedVariable;
-
         private Integer request;
         private List<Integer> response;
 
@@ -28,7 +27,6 @@ public class App {
         @Override
         public void run() {
             // Call the function that modifies the shared variable
-
             Integer number = request;
 
             // Acquire read lock to check cached values
