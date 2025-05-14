@@ -48,8 +48,8 @@ public class FactorizerService extends Thread{
         int[] factors = new int[0];
         boolean hit = false;
 
-        readLock.lock();
         try {
+            readLock.lock();
             if (number == cache.lastNumber) {
                 factors = cache.lastFactors.clone();
                 hit = true;
@@ -61,8 +61,8 @@ public class FactorizerService extends Thread{
         if (!hit) {
             factors = factorize(number);
 
-            writeLock.lock();
             try {
+                writeLock.lock();
                 if (cache.lastNumber != number) {
                     cache.lastNumber  = number;
                     cache.lastFactors = factors.clone();
