@@ -4,3 +4,18 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+[[bin]]
+name = "Account"
+path = "src/Account.rs"
+
+[[bin]]
+name = "FactorizerService"
+path = "src/FactorizerService.rs"
+
+[[bin]]
+name = "ImprovedFactorizerService"
+path = "src/ImprovedFactorizerService.rs"
+
+[lib]
+name = "common"
+path = "src/common.rs"
