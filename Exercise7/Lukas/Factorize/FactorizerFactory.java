@@ -25,8 +25,8 @@ public class FactorizerFactory {
         );
     }
 
-    public CallableFactorizerService getCallableFactorizerService() {
-        return new CallableFactorizerService(
+    public FactorizerService_Callable getCallableFactorizerService() {
+        return new FactorizerService_Callable(
                 this.compoundNumbers[this.randomInt.nextInt(this.compoundNumbers.length)],
                 this.cache,
                 this.lock

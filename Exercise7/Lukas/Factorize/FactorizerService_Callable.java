@@ -9,13 +9,13 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class CallableFactorizerService implements Callable<String> {
+public class FactorizerService_Callable implements Callable<String> {
     private final int number;
     private final SharedCache cache;
     private final Lock readLock;
     private final Lock writeLock;
 
-    public CallableFactorizerService(int number, SharedCache cache, ReentrantReadWriteLock lock){
+    public FactorizerService_Callable(int number, SharedCache cache, ReentrantReadWriteLock lock){
         this.number = number;
         this.cache = cache;
         this.readLock = lock.readLock();

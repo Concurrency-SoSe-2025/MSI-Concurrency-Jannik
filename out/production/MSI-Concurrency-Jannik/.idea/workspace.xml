@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1ecc553-9be7-483f-ae89-ad3c40dd69e4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Exercise7/Lukas/Factorize/CallableFactorizerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercise7/Lukas/MyCallableExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise7/Lukas/FactorizerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercise7/Lukas/Factorize/FactorizerFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise7/Lukas/FactorizerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercise7/Lukas/Factorize/FactorizerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise7/Lukas/MyExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercise7/Lukas/MyExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise7/Lukas/SharedCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercise7/Lukas/Factorize/SharedCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exercise7/Lukas/MyCompletionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise7/Lukas/Factorize/CallableFactorizerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercise7/Lukas/Factorize/FactorizerService_Callable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise7/Lukas/Factorize/FactorizerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercise7/Lukas/Factorize/FactorizerFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise7/Lukas/MyCallableExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercise7/Lukas/MyExecutor_Callable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +46,7 @@
     "Application.ConditionedPhilosopher.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.MyCallableExecutor.executor": "Run",
+    "Application.MyCompletionService.executor": "Run",
     "Application.MyExecutor.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -72,7 +71,7 @@
       <recent name="Problem3" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MyCallableExecutor">
+  <component name="RunManager" selected="Application.MyCompletionService">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Problem3Lukas.Main" />
       <module name="Exercise5" />
@@ -86,8 +85,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyCallableExecutor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Exercise7.Lukas.MyCallableExecutor" />
+    <configuration name="MyCompletionService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Exercise7.Lukas.MyCompletionService" />
       <module name="MSI-Concurrency-Jannik" />
       <extension name="coverage">
         <pattern>
@@ -112,9 +111,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MyExecutor_Callable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Exercise7.Lukas.MyExecutor_Callable" />
+      <module name="MSI-Concurrency-Jannik" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Exercise7.Lukas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MyCallableExecutor" />
+        <item itemvalue="Application.MyCompletionService" />
+        <item itemvalue="Application.MyExecutor_Callable" />
         <item itemvalue="Application.MyExecutor" />
         <item itemvalue="Application.Main" />
       </list>
@@ -143,7 +156,8 @@
       <workItem from="1748674476236" duration="4588000" />
       <workItem from="1748682878176" duration="1532000" />
       <workItem from="1748684479608" duration="3204000" />
-      <workItem from="1748688367892" duration="824000" />
+      <workItem from="1748688367892" duration="2524000" />
+      <workItem from="1748709868153" duration="2374000" />
     </task>
     <servers />
   </component>
