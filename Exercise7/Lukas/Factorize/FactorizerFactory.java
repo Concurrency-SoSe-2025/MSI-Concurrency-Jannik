@@ -1,4 +1,4 @@
-package Exercise7.Lukas;
+package Exercise7.Lukas.Factorize;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -17,8 +17,16 @@ public class FactorizerFactory {
         this.compoundNumbers = getCompoundNumbers(10);
     }
 
-    public FactorizerService getFactorizerService () {
+    public FactorizerService getFactorizerService() {
         return new FactorizerService(
+                this.compoundNumbers[this.randomInt.nextInt(this.compoundNumbers.length)],
+                this.cache,
+                this.lock
+        );
+    }
+
+    public CallableFactorizerService getCallableFactorizerService() {
+        return new CallableFactorizerService(
                 this.compoundNumbers[this.randomInt.nextInt(this.compoundNumbers.length)],
                 this.cache,
                 this.lock

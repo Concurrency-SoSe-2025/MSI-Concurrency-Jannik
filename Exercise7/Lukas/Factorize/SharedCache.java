@@ -1,4 +1,4 @@
-package Exercise7.Lukas;
+package Exercise7.Lukas.Factorize;
 
 import java.util.HashMap;
 import java.util.Map;

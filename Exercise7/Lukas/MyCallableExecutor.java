@@ -1,14 +1,16 @@
 package Exercise7.Lukas;
 import Exercise7.Lukas.Factorize.FactorizerFactory;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Queue;
-import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.*;
 
-public class MyExecutor {
+public class MyCallableExecutor {
     private final Thread[] Workers;
     private final Queue<Runnable> ExecutionQueue;
 
-    public MyExecutor(int WorkerPoolSize) {
+    public MyCallableExecutor(int WorkerPoolSize) {
         this.ExecutionQueue = new ConcurrentLinkedQueue<>();
         this.Workers = new Thread[WorkerPoolSize];
 
@@ -16,6 +18,12 @@ public class MyExecutor {
             Workers[i] = new Thread(new Worker());
             Workers[i].start();
         }
+    }
+
+    public <V> Future<V> execute(Callable<V> task) {
+        FutureTask<V> futureTask = new FutureTask<>(task);
+        this.ExecutionQueue.offer(futureTask);
+        return futureTask;
     }
 
     public void execute(Runnable task) {
@@ -41,15 +49,26 @@ public class MyExecutor {
         }
     }
 
-    public static void main(String[] args) throws InterruptedException {
-        MyExecutor executor = new MyExecutor(6);
-        FactorizerFactory factorizerFactory = new FactorizerFactory();
+    public static void main(String[] args) throws InterruptedException, ExecutionException {
+        int numberExecutions = 25;
 
-        for (int i = 0; i < 25; i++) {
+        MyCallableExecutor executor = new MyCallableExecutor(6);
+        FactorizerFactory factorizerFactory = new FactorizerFactory();
+        List<Future<String>> futures = new ArrayList<>(numberExecutions);
+
+        for (int i = 0; i < numberExecutions; i++) {
             executor.execute(factorizerFactory.getFactorizerService());
+
+            Future<String> futureResult = executor.execute(factorizerFactory.getCallableFactorizerService());
+            futures.add(futureResult);
         }
 
         Thread.sleep(100);
         executor.stop();
+
+        System.out.println("\nResolving Futures");
+        for (Future<String> future: futures) {
+            System.out.println(future.get());
+        }
     }
 }
