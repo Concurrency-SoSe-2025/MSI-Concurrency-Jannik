@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f37a8ce2-c5ca-4d9c-b941-2cb5a917c594" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Exercise5/src/Problem2/ConditionedPhilosopher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Exercise5/src/Problem2/IntrinsicPhilosopher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise5/src/Problem1/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercise5/src/Problem1/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise5/src/Problem2/App.java" beforeDir="false" />
+    <list default="true" id="f1ecc553-9be7-483f-ae89-ad3c40dd69e4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Exercise7/Lukas/FactorizerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exercise7/Lukas/MyExecutor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exercise7/Lukas/SharedCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exercise5/src/Problem3Lukas/FactorizerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Exercise5/src/Problem3Lukas/FactorizerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MSI-Concurrency-Jannik/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MSI-Concurrency-Jannik/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,10 +26,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
-  <component name="ProjectId" id="2wAkyFRnNi3FHAX1Zqlm5xS0nMm" />
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2wAyWsxrQXNwlWweG8Q06mBOVw8" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -39,37 +45,83 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.ConditionedPhilosopher.executor": "Run",
-    "Application.IntrinsicPhilosopher.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.MyExecutor.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/lukas/Nextcloud/Development/HTWG/Sem_2/Concurrency/MSI-Concurrency-Jannik",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "org.intellij.sdk.settings.AppSettingsConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Problem3" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MyExecutor">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Problem3Lukas.Main" />
+      <module name="Exercise5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Problem3Lukas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyExecutor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Exercise7.Lukas.MyExecutor" />
+      <module name="MSI-Concurrency-Jannik" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Exercise7.Lukas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MyExecutor" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f37a8ce2-c5ca-4d9c-b941-2cb5a917c594" name="Changes" comment="" />
-      <created>1745492018144</created>
+      <changelist id="f1ecc553-9be7-483f-ae89-ad3c40dd69e4" name="Changes" comment="" />
+      <created>1745498707837</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1745492018144</updated>
-      <workItem from="1745492019813" duration="4002000" />
+      <updated>1745498707837</updated>
+      <workItem from="1745498709383" duration="3366000" />
+      <workItem from="1746455254929" duration="3094000" />
+      <workItem from="1746458569085" duration="6900000" />
+      <workItem from="1746513177028" duration="1290000" />
+      <workItem from="1748674476236" duration="4588000" />
+      <workItem from="1748682878176" duration="1532000" />
+      <workItem from="1748684479608" duration="305000" />
     </task>
     <servers />
   </component>

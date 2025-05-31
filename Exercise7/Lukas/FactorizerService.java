@@ -1,4 +1,4 @@
-package Problem3Lukas;
+package Exercise7.Lukas;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -8,38 +8,11 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class SharedCache {
-    public int lastNumber;
-    public int[] lastFactors;
-}
-
-public class FactorizerService extends Thread{
+public class FactorizerService implements Runnable{
     private final int number;
     private final SharedCache cache;
     private final Lock readLock;
     private final Lock writeLock;
-
-    public static void main(String[] args) throws InterruptedException {
-        SharedCache sharedCache = new SharedCache();
-        ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
-
-        List<Thread> threads = new ArrayList<>();
-        int maxNumber = 1000;
-
-        for (int i = 300; i <= maxNumber; i++) {
-            FactorizerService service1 = new FactorizerService(i, sharedCache, lock);
-            service1.start();
-            threads.add(service1);
-
-            FactorizerService service2 = new FactorizerService(i, sharedCache, lock);
-            service2.start();
-            threads.add(service2);
-        }
-
-        for (Thread t : threads) {
-            t.join();
-        }
-    }
 
     public FactorizerService(int number, SharedCache cache, ReentrantReadWriteLock lock){
         this.number = number;
@@ -50,13 +23,13 @@ public class FactorizerService extends Thread{
 
     @Override
     public void run() {
-        int[] factors = new int[0];
+        int[] factors;
         boolean hit = false;
 
         try {
             readLock.lock();
-            if (number == cache.lastNumber) {
-                factors = cache.lastFactors.clone();
+            factors = cache.sharedCache.get(this.number);
+            if (factors != null) {
                 hit = true;
             }
         } finally {
@@ -68,11 +41,10 @@ public class FactorizerService extends Thread{
 
             try {
                 writeLock.lock();
-                if (cache.lastNumber != number) {
-                    cache.lastNumber  = number;
-                    cache.lastFactors = factors.clone();
+                if (cache.sharedCache.get(this.number) == null) {
+                    cache.sharedCache.put(number, factors.clone());
                 } else {
-                    factors = cache.lastFactors.clone();
+                    factors = cache.sharedCache.get(this.number);
                     hit = true;
                 }
             } finally {
