@@ -1,6 +1,6 @@
 pub const REASONABLE_VALUE: usize = 20;
 
-pub const PRIMES: [usize; 3] = [48597, 164903, 75623]; 
+pub const PRIMES: [usize; 3] = [48597, 164903, 75623];
 
 pub fn factorize(mut number: usize, factors: &mut [usize; REASONABLE_VALUE]) -> &mut [usize; REASONABLE_VALUE] {
     let mut count = 0;

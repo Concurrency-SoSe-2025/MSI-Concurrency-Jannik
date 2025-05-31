@@ -26,11 +26,11 @@ impl Account {
 }
 
 pub fn execute(command: &str, account: &Arc<Mutex<Account>>, amount: isize) {
-    let mut account_m = account.lock().unwrap();
-
     if command == "deposit" {
+        let mut account_m = account.lock().unwrap();
         account_m.deposit(amount)
     } else if command == "withdraw" {
+        let mut account_m = account.lock().unwrap();
         account_m.withdraw(amount)
     } else {
         println!("Unknown command {command}")
