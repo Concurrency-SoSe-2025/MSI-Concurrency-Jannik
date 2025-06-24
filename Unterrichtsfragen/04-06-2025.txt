@@ -1,0 +1,9 @@
+Wann sind Programme Thread sicher?
+Wenn sich Programm so verhält, wie die Spezifikation (Invarianten, Postconditions) fordert, egal wie es ausgeführt wird
+
+Was macht Threadsichere Klasse aus?
+Kann verwendet werden, wie man will und hält sich an Spezifikationen
+
+Müssen in einem threadsicheren Programm alle Klassen threadsicher sein?
+Nein, Programm ist dann aber verantwortlich, dass diese Klassen Threadsicher aufgerufen werden.
+Es geht eigentlich nur um geteilte Daten, Probleme entstehen nur, wenn Daten geteilt werden und nicht immutable sind (Gute Strategie ist, so wenig wie möglich teilen)
