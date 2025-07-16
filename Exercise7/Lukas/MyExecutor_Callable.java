@@ -54,6 +54,7 @@ public class MyExecutor_Callable {
 
         MyExecutor_Callable executor = new MyExecutor_Callable(6);
         FactorizerFactory factorizerFactory = new FactorizerFactory();
+
         List<Future<String>> futures = new ArrayList<>(numberExecutions);
 
         for (int i = 0; i < numberExecutions; i++) {

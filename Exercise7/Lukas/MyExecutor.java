@@ -31,7 +31,6 @@ public class MyExecutor {
     private class Worker implements Runnable {
         @Override
         public void run() {
-
             while (!Thread.currentThread().isInterrupted()) {
                 Runnable task = ExecutionQueue.poll();
                 if (task != null){

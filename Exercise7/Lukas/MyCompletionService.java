@@ -13,7 +13,7 @@ public class MyCompletionService<V> {
         this.completionQueue = new ConcurrentLinkedQueue<>();
     }
 
-    public Future<V> execute(final Callable<V> task) {
+    public void execute(final Callable<V> task) {
         FutureTask<V> futureTask = new FutureTask<V>(task) {
             @Override
             protected void done() {
@@ -21,7 +21,6 @@ public class MyCompletionService<V> {
             }
         };
         executor.execute(futureTask);
-        return futureTask;
     }
 
     public Future<V> poll() {
